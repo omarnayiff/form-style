@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario con íconos</title>
+  
+  <!-- Cargar Montserrat desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Cargar Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  
+  <style>
+    /* Fuente general */
+    body, input, textarea, button {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Íconos Font Awesome generales */
+    .fas {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #FD9800;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    /* Posición general de los campos */
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    /* Espacio para íconos en inputs y textarea */
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 10px 10px 45px; /* Espacio para ícono */
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif; /* Asegura que textarea también lo use */
+    }
+
+    /* Ajuste específico para cada ícono */
+    .icon-nombre,
+    .icon-email,
+    .icon-telefono,
+    .icon-mensaje {
+      left: 12px;
+      font-size: 16px;
+    }
+
+    /* Ícono del mensaje (ajuste vertical específico si necesario) */
+    .icon-mensaje {
+      top: 13%;
+      transform: translateY(0%);
+    }
+
+    /* Estilos para textarea */
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    /* Botón */
+    button {
+      background-color: #FD9800;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e08600;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <div class="form-group">
+      <i class="fas fa-user icon-nombre"></i>
+      <input type="text" name="nombre" placeholder="Nombre" required />
+    </div>
+
+    <div class="form-group">
+      <i class="fas fa-envelope icon-email"></i>
+      <input type="email" name="email" placeholder="E-mail" required />
+    </div>
+
+    <div class="form-group">
+      <i class="fas fa-phone icon-telefono"></i>
+      <input type="tel" name="telefono" placeholder="Teléfono" required />
+    </div>
+
+    <div class="form-group">
+      <i class="fas fa-comment icon-mensaje"></i>
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
